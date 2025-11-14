@@ -1,0 +1,434 @@
+/* ----- Base ----- */
+
+:root {
+  /* Softer lilac palette */
+  --violet-deep: #5b3b8f;
+  --violet-mid: #8b6ad8;
+  --violet-light: #f4ecff;
+  --accent-gold: #f5a97f; /* warm accent for links/buttons */
+
+  --text-main: #2e1b4e;
+  --text-soft: #5b4a77;
+
+  --card-bg: rgba(255, 255, 255, 0.94);
+  --border-soft: rgba(91, 74, 119, 0.12);
+
+  --max-width: 1200px; /* slightly narrower for that clean, centered feel */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-main);
+  /* Soft vertical lilac gradient like the mockup */
+  background: linear-gradient(
+    180deg,
+    #f8f2ff 0%,
+    #f3e8ff 35%,
+    #eddfff 70%,
+    #e6d4ff 100%
+  );
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ----- Hero ----- */
+
+.hero {
+  padding: 80px 16px 72px;
+  text-align: center;
+  color: var(--text-main);
+}
+
+.hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hero-logo-script {
+  font-family: "Great Vibes", "Playfair Display", serif;
+  font-size: clamp(4rem, 7vw, 5.5rem);
+  margin: 0;
+  letter-spacing: 0.06em;
+  color: var(--violet-deep);
+}
+
+.hero-logo-subtitle {
+  margin: 4px 0 20px;
+  letter-spacing: 0.4em;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.hero-tagline {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+  line-height: 1.6;
+  color: var(--violet-deep);
+}
+
+/* ----- Sections ----- */
+
+.section {
+  padding: 60px 16px;
+}
+
+/* Light lilac “cards” over the body gradient */
+.section-dark {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.95)
+  );
+}
+
+.section-mid {
+  background: linear-gradient(
+    180deg,
+    rgba(244, 236, 255, 0.9),
+    rgba(241, 229, 255, 0.95)
+  );
+}
+
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.1rem, 3.2vw, 2.7rem);
+  margin: 0 0 12px;
+  color: var(--violet-deep);
+}
+
+.section-text h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  margin: 16px 0 8px;
+  color: var(--violet-deep);
+}
+
+.section-text p {
+  margin: 0 0 12px;
+  line-height: 1.8;
+  color: var(--text-soft);
+  max-width: 40rem;
+  font-weight: 300;
+}
+
+/* ----- Layout ----- */
+
+.two-column {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+/* =========================
+   ABOUT GALLERY
+   ========================= */
+
+.section-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* left big image */
+.gallery-main {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 35px rgba(106, 74, 155, 0.18);
+  height: 100%;
+  background: white;
+}
+
+.gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* right column (top image + bottom split) */
+.gallery-right {
+  display: grid;
+  grid-template-rows: 1.1fr 1fr; /* top slightly taller */
+  gap: 16px;
+  height: 100%;
+}
+
+.gallery-right-top,
+.gallery-right-bottom {
+  border-radius: 24px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 12px 30px rgba(106, 74, 155, 0.12);
+}
+
+/* top-right single image */
+.gallery-right-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* bottom-right: two images side by side */
+.gallery-right-bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.gallery-right-bottom img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+/* make sure all gallery images fill their cells */
+.section-gallery img {
+  display: block;
+}
+
+/* =========================
+   VISIT SECTION
+   ========================= */
+
+.visit-two-column {
+  align-items: stretch;
+}
+
+/* left side: photo + map stacked */
+.visit-left {
+  display: grid;
+  grid-template-rows: 1.6fr 1fr;
+  gap: 14px;
+}
+
+/* give the map a nicer, fixed-ish height */
+.visit-map {
+  min-height: 260px;
+}
+
+/* cards & media */
+.card {
+  background: var(--card-bg);
+  border-radius: 24px;
+  border: 1px solid var(--border-soft);
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(106, 74, 155, 0.16);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visit-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* right side text tweaks */
+.visit-text-block {
+  align-self: center;
+}
+
+.visit-address {
+  font-weight: 500;
+  margin: 8px 0 16px;
+  color: var(--text-main);
+}
+
+.visit-hours p {
+  margin-bottom: 4px;
+}
+
+/* link style in visit section and elsewhere */
+
+.text-link {
+  display: inline-block;
+  margin-top: 22px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--violet-deep);
+  position: relative;
+}
+
+.text-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: var(--accent-gold);
+  transition: width 0.25s ease;
+}
+
+.text-link:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   CONTACT
+   ========================= */
+
+.contact-inner {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.contact-inner .section-text {
+  max-width: 540px;
+}
+
+.contact-details p {
+  margin-bottom: 4px;
+}
+
+.contact-social {
+  margin-top: 18px;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+  justify-content: center;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  text-decoration: none;
+  color: #ffffff;
+  background: radial-gradient(
+    circle at top left,
+    #b19fff 0,
+    #8a6af0 55%,
+    #6b4ad0 100%
+  );
+  font-size: 0.9rem;
+  box-shadow: 0 10px 24px rgba(106, 74, 155, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(106, 74, 155, 0.4);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.social-icon {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.social-icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* Visually hide text but keep it for accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ----- Footer ----- */
+
+.footer {
+  text-align: center;
+  padding: 18px 12px 24px;
+  font-size: 0.8rem;
+  color: rgba(46, 27, 78, 0.6);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 860px) {
+  .two-column {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .section-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding-inline: 20px;
+  }
+
+  .visit-left {
+    grid-template-rows: auto auto;
+  }
+
+  .section-text p {
+    max-width: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    padding-top: 56px;
+  }
+
+  .hero-logo-script {
+    font-size: 3.4rem;
+  }
+
+  .hero-logo-subtitle {
+    letter-spacing: 0.28em;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
