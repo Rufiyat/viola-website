@@ -41,10 +41,10 @@ const ContactSection = () => {
           <div className="contact-details">
             {/* Replace with your real phone/email if you’d like */}
             <p>
-              <strong>Phone:</strong> (555) 123-4567
+              <strong>Phone:</strong> +1 480-532-6390
             </p>
             <p>
-              <strong>Email:</strong> hello@shopviola.com
+              <strong>Email:</strong> violaaccessoriesllc@gmail.com
             </p>
           </div>
 
