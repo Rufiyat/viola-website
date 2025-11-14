@@ -30,9 +30,9 @@ const VisitSection = () => {
         <div className="visit-text-block section-text">
           <h2>Visit Us</h2>
           <p className="visit-address">
-            Arrowhead Towne Center
+            7700 W Arrowhead Towne Center,
             <br />
-            Phoenix, AZ
+            Glendale, AZ, United States
           </p>
 
           <div className="visit-hours">
@@ -40,10 +40,6 @@ const VisitSection = () => {
             <p>Mon – Sat: 10am – 9pm</p>
             <p>Sun: 11am – 6pm</p>
           </div>
-
-          <a href="#contact" className="text-link">
-            See what we carry in-store →
-          </a>
         </div>
       </div>
     </section>
