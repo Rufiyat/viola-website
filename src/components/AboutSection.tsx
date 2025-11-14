@@ -1,3 +1,7 @@
+// src/components/AboutSection.tsx
+
+const imageBase = `${import.meta.env.BASE_URL}images/`;
+
 const AboutSection = () => {
   return (
     <section className="section section-dark" id="about">
@@ -17,7 +21,7 @@ const AboutSection = () => {
         <div className="section-gallery">
           <div className="gallery-main">
             <img
-              src="/images/store-main.jpg"
+              src={`${imageBase}store-main.jpg`}
               alt="Viola accessories kiosk in the mall"
             />
           </div>
@@ -25,17 +29,17 @@ const AboutSection = () => {
           <div className="gallery-right">
             <div className="gallery-right-top">
               <img
-                src="/images/store-kiosk.jpg"
+                src={`${imageBase}store-kiosk.jpg`}
                 alt="Display shelves with accessories"
               />
             </div>
             <div className="gallery-right-bottom">
               <img
-                src="/images/necklaces.jpg"
+                src={`${imageBase}necklaces.jpg`}
                 alt="Necklaces and lockets on display"
               />
               <img
-                src="/images/sunglasses.jpg"
+                src={`${imageBase}sunglasses.jpg`}
                 alt="Sunglasses display"
               />
             </div>
